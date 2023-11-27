@@ -1,17 +1,21 @@
 package dev.danvega.contentcalendar.model;
 
-import java.time.LocalDateTime;
+        import jakarta.validation.Valid;
+        import jakarta.validation.constraints.NotBlank;
+        import org.springframework.data.annotation.Id;
+
+        import java.time.LocalDateTime;
 
 public record Content(
+        @Id
         Integer id,
+        @NotBlank
         String title,
         String desc,
         Status status,
         Type contentType,
         LocalDateTime dateCreated,
         LocalDateTime dateUpdated,
-        String url
-) {
+        String url) {
 
 }
-
